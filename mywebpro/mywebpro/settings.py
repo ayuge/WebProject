@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'polls',
+    # 完整写法如下：
+    # 'polls.apps.PollsConfig',
 ]
 
 MIDDLEWARE = [
@@ -105,7 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# 将TIME_ZONE设置为国内所在的时区Asia/Shanghai
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -118,3 +124,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 不适用默认的SQLite数据库，以Mysql数据库作为示例
+# import pymysql
+# pymysql.install_as_MySQLdb()
+#
+# DATABASES = {
+#     'ENGINE': 'django.db.backends.mysql',
+#     'NAME': 'mysite',
+#     'HOST': '127.0.0.1',
+#     'USER': 'root',
+#     'PASSWORD': '123456',
+#     'PORT': '3306',
+# }
